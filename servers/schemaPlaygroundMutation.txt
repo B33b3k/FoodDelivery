@@ -1,0 +1,13 @@
+//! loginUser
+mutation{
+  loginUser(email:"beebek2004@gmail.com",password:"securepassword"){
+    accessToken
+    refreshToken
+    error{
+      message
+    }
+    
+    
+    
+  }
+}
