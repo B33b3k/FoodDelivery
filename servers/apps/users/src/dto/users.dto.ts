@@ -10,7 +10,7 @@ export class CreateUserInput {
   @IsString()
   @IsNotEmpty({ message: 'Name is required' })
 
-  name: string;
+  name!: string;
 
   @Field()
   @IsEmail()

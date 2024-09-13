@@ -50,10 +50,10 @@ export class LoginResponseType {
         user?: User | any = null;
 
     @Field()
-    accessToken?: string;
+    accessToken!: string;
 
     @Field()
-    refreshToken?: string;
+    refreshToken!: string;
 
     @Field(() => ErrorType, { nullable: true })
     error?: ErrorType | any = null;

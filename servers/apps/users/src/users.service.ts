@@ -79,7 +79,7 @@ activationCode
     UserData
 
   ) {
-    const activationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const activationCode = Math.floor(1000 + Math.random() * 9000).toString();
     const token = this.jwtService.sign(
       { user, activationCode },
       {
@@ -146,9 +146,9 @@ async loginUser(
   // If the user is not found, return a clear error message with null tokens
   if (!user) {
     return {
-      user: null,
-      accessToken: null,
-      refreshToken: null,
+      user: '',
+      accessToken: '',
+      refreshToken: '',
       error: {
         message: 'User not found',
       },
@@ -159,9 +159,9 @@ async loginUser(
   const passwordValid = await bcrypt.compare(password, user.password);
   if (!passwordValid) {
     return {
-      user: null,
-      accessToken: null,
-      refreshToken: null,
+      user: '',
+      accessToken: '',
+      refreshToken: '',
       error: {
         message: 'Invalid credentials',
       },
@@ -189,9 +189,9 @@ async loginUser(
   //logout the user
   async logout(req: any) {
     //logout logic
-    req.user = null;
-    req.accesstoken = null;
-    req.refreshtoken = null;
+    req.user = '';
+    req.accesstoken = '';
+    req.refreshtoken = '';
     
     return { message: 'User logged out successfully' };
 
